@@ -1,64 +1,53 @@
- var users = {
 
-    "Akmal": {
-        name: "Akmal",
-        surname: "O'ktamov",
-        age: 27,
-        salary: 800
+var Users = {
+        emirhan :  {
+        name : "emirhan",
+        userName: "ertan",
+        salary : 500 ,
+        age : 21,
     },
 
-    "Oybek": {
-         name: "Oybek",
-        surname: "sattorov",
-        age: 36,
-        salary: 1500
+        Akmal: {
+      name: "Akmal",
+      userName: "O'ktamov",
+      salary: 800,
+      age: 27,
     },
+    Oybek: {
+      name: "Oybek",
+      userName: "Sattorov",
+      salary:1500,
+      age: 36,
+    },
+    Umid: {
+      name: "Umid",
+      userName: "Abdushukurov",
+      salary: 400,
+      age: 21,
+    },
+  };
+  function sumSalary(Users) {
+    var salary = 0;
 
-    "Umid": {
-        name: "Umid",
-        surname: "Abdushukurov",
-        age: 21,
-        salary: 400
-   }
+    for (var user in Users) {
+      salary += Users[user].salary;
+    }
 
+    return salary;
+  }
 
+  function averageAge(Users) {
+  var age = 0;
+    var length = 0;
 
+    for (var user in Users) {
+      length++;
+      age = age + Users[user].age;
+    }
 
-   }
-
-
-    function sumage(users) {
-
-    var allAge =  ( users.Akmal.age  +  users.Oybek.age + users.Umid.age) / 3
-
-
-    // console.log(akmalage , Oybekage, umdAge , allAge );
-
-    return allAge
-}
-
- console.log( sumage(users));
-
-
-
- function samSalary(users) {
-
-      var akmalSalary = users.Akmal.salary
-      var uybeksalary = users.Oybek.salary
-      var umidSalary = users.Umid.salary
-
-        var allUsersSalery  =  (akmalSalary + uybeksalary + umidSalary)
-
-   //     console.log(akmalSalary, uybeksalary, umidSalaru, allUsersSelery);
-
-         return allUsersSalery //Bu yerga userlarni o'rtasha yoshini chiqarasiz
-   }
-        console.log(samSalary(users));
+    return age / length;
+  }
 
 
-// console'dagi natija
-//  console.log(sumSalary(users));
-// --> 2700
-
-//  console.log(avarageAge(users));
-// --> 28
+  console.log(sumSalary(Users));
+  console.log(averageAge(Users));
